@@ -1,0 +1,260 @@
+/* font-family: 'Karla', sans-serif;
+Farbe: #323A45 / #848484 */
+
+* {
+  margin-left: 2vw;
+  margin-right: 2vw;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  color: #323a45;
+  align-items: baseline;
+  margin-left: 2vw;
+}
+.nav-header ul {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+  list-style: none;
+  margin-right: 1.5%;
+  overflow: hidden;
+}
+.nav-header a {
+  text-decoration: none;
+  color: #323a45;
+  margin: 0;
+}
+.nav-header li {
+  margin: 0;
+}
+.nav-header h1 {
+  font-size: 2rem;
+}
+.sec-header img {
+  background-color: aquamarine;
+  margin: 0;
+  transition: all 0.1s ease-in-out;
+  width: 96%;
+}
+.kanken {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 2.5vw;
+}
+.article-div {
+  margin: 0;
+}
+.article-div p:nth-of-type(1) {
+  margin-left: 0;
+  color: #323a45;
+}
+.article-div p:nth-of-type(2) {
+  margin-left: 0;
+  color: #848484;
+}
+.kanken .price {
+  margin-right: -1%;
+}
+img:hover {
+  opacity: 0.4;
+}
+.tomons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 4%;
+  margin-left: 0;
+  /* column-gap: 2%; */
+}
+figure img {
+  width: 100%;
+  margin: 0;
+  transition: all 1s ease-in-out;
+}
+figcaption {
+  width: 108%;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+figcaption p {
+  margin: 0;
+}
+figcaption p:nth-of-type(2) {
+  color: #848484;
+}
+
+footer {
+  display: flex;
+  margin-top: 5%;
+  color: #323a45;
+  margin-left: 0;
+}
+footer h2:nth-of-type(1) {
+  margin-bottom: 15%;
+}
+footer span {
+  margin-left: 0;
+  font-size: 20px;
+}
+.div-footer {
+  color: #848484;
+  margin-top: 5%;
+  margin-left: 5%;
+}
+.div-footer span {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .tomons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .tomons {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  footer {
+    flex-direction: column-reverse;
+  }
+  figcaption {
+    width: 103%;
+  }
+  * {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .nav-link {
+    position: absolute;
+    right: 0px;
+    height: 50vh;
+    top: 8vh;
+    padding: 10%;
+    padding-right: 50%;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translatey(-120%);
+    border-radius: 10%;
+
+    transition: all 0.5s ease-in-out;
+  }
+  .nav-link a {
+    color: white;
+  }
+  /* .nav-link li {
+    opacity: 0;
+  } */
+  .nav-header div {
+    display: block;
+  }
+}
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 30px;
+  height: 3px;
+  background-color: #323a45;
+  margin: 5px;
+  transition: all 0.5s ease-in-out;
+}
+.nav-active {
+  transform: translatex(0%);
+}
+@keyframes navLinksFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* 
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+} */
